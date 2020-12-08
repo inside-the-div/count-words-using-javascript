@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		.container{
+			margin: 50px auto;
+			width: 900px;
+		}
+		textarea{
+			width: 100%;
+			font-size: 17px;
+			padding: 10px;
+
+		}
+		button{
+			float: right;
+			padding: 5px 30px;
+			font-size:20px;
+		}
+	</style>
+</head>
+<body>
+	
+
+	<div class="container">
+		<label for="text-box"><b>Input Your Text:</b></label>
+		<textarea name="" id="text-box" cols="30" rows="20" ></textarea>
+		<button id="count-btn">Count</button>
+		<p><b>Total Words:</b> <span id="total">0</span></p>
+	</div>
+  
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+
+			$("#count-btn").click(function(){
+				var all_text = $("#text-box").val();
+				all_text = all_text.trim();
+				var words = all_text.split(" ");
+				$("#total").html(words.length);
+			})
+
+		})
+	</script>
+
+</body>
+</html>
